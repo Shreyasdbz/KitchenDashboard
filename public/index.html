@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4nAkabJzL1wlZF4I5SWC1WXdkvxtwato&libraries=places"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
+    <script defer src="./script.js"></script>
+    <title>Kitchen Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card-timeDate">
+            <div class="card-timeDate-time">
+                <span>12:15 PM</span>
+            </div>
+            <div class="card-timeDate-date">
+                <span>August 13, 2019</span>
+            </div>
+            <div class="enter-location">
+                <input type="text" class="enter-location-area" location-search placeholder="Enter a location">
+            </div>
+        </div>
+        <div class="card-weather">
+            <div class="card-weather-row1">
+                <div class="card-weather-header">Current Conditions</div>
+                <div class="card-weather-content">
+                    <div class="card-weather-current-tempIcon">
+                        <canvas id="currentIcon"></canvas>
+                        <div class="card-weather-current-temp"></div>        
+                    </div>
+                    <div class="card-weather-current-highLow">
+                        <div class="card-weather-current-high">
+                            <span>High</span>
+                            <span>85 F</span>
+                        </div>
+                        <div class="card-weather-current-low">
+                            <span>Low</span>
+                            <span>85 F</span>
+                        </div>    
+                    </div>
+                    <div class="card-weather-current-wind">
+                        <div>Wind: </div>
+                        <div>3 MPH</div>
+                    </div>
+                    <div class="card-weather-current-rain">
+                        <div>Rain: </div>
+                        <div>0%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-weather-hourly">
+                <div class="card-weather-header">Hourly Forecast</div>
+                <div class="card-weather-content">
+                    <div class="card-weather-hourly-hour1">
+                        <div class="card-weather-hourly-hour1-time">1 PM</div>
+                        <div class="card-weather-hourly-hour1-temperature">82 F</div>
+                        <canvas class="card-weather-hourly-hour1-icon"></canvas>
+                    </div>
+                    <div class="card-weather-hourly-hour2">
+                        <div class="card-weather-hourly-hour2-time">2 PM</div>
+                        <div class="card-weather-hourly-hour2-temperature">82 F</div>
+                        <canvas class="card-weather-hourly-hour2-icon"></canvas>
+                    </div>
+                    <div class="card-weather-hourly-hour3">
+                        <div class="card-weather-hourly-hour3-time">3 PM</div>
+                        <div class="card-weather-hourly-hour3-temperature">82 F</div>
+                        <canvas class="card-weather-hourly-hour3-icon"></canvas>
+                    </div>
+                    <div class="card-weather-hourly-hour4">
+                        <div class="card-weather-hourly-hour4-time">4 PM</div>
+                        <div class="card-weather-hourly-hour4-temperature">82 F</div>
+                        <canvas class="card-weather-hourly-hour4-icon"></canvas>
+                    </div>
+                    <div class="card-weather-hourly-hour5">
+                        <div class="card-weather-hourly-hour5-time">5 PM</div>
+                        <div class="card-weather-hourly-hour5-temperature">82 F</div>
+                        <canvas class="card-weather-hourly-hour5-icon"></canvas>
+                    </div>
+                </div>        
+            </div>
+            <div class="card-weather-weekly">
+                <div class="card-weather-header">Weekly Forecast</div>
+                <div class="card-weather-content">
+                    <div class="card-weather-weekly-day">
+                        <div class="card-weather-weekly-day1-high"></div>
+                        <div class="card-weather-weekly-day1-low"></div>
+                        <canvas id="card-weather-weekly-day1-icon"></canvas>
+                    </div>
+                    <div class="card-weather-weekly-day">
+                        <div class="card-weather-weekly-day2-high"></div>
+                        <div class="card-weather-weekly-day2-low"></div>
+                        <canvas id="card-weather-weekly-day2-icon"></canvas>
+                    </div>
+                    <div class="card-weather-weekly-day">
+                        <div class="card-weather-weekly-day3-high"></div>
+                        <div class="card-weather-weekly-day3-low"></div>
+                        <canvas id="card-weather-weekly-day3-icon"></canvas>
+                    </div>
+                    <div class="card-weather-weekly-day">
+                        <div class="card-weather-weekly-day4-high"></div>
+                        <div class="card-weather-weekly-day4-low"></div>
+                        <canvas id="card-weather-weekly-day4-icon"></canvas>
+                    </div>
+                    <div class="card-weather-weekly-day">
+                        <div class="card-weather-weekly-day5-high"></div>
+                        <div class="card-weather-weekly-day5-low"></div>
+                        <canvas id="card-weather-weekly-day5-icon"></canvas>
+                    </div>
+                </div>        
+            </div>
+        </div>
+        <div class="card-news">
+            <div class="card-news-header">Trending News</div>
+            <div class="card-news-newsBox">
+                <div class="card-news-newsBox-headline">Headline 1</div>
+                <div class="card-news-newsBox-headline">Headline 2</div>
+                <div class="card-news-newsBox-headline">Headline 3</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
