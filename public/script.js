@@ -19,10 +19,14 @@ searchBox.addListener('places_changed', () => {
         console.log(place)
         console.log(place.formatted_address)
         console.log(data)
-        // setWeatherData(data, place.formatted_address)
+        setWeatherData(data, place.formatted_address)
     })
 })
 
 const icon = new Skycons({color: '#222'})
 icon.set('currentIcon', 'clear-day')
 icon.play()
+
+function setWeatherData(data, place){
+    
+}
