@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UT˚F-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style.css">
@@ -26,89 +26,121 @@
         </div>
         <div class="card-weather">
             <div class="card-weather-row1">
-                <div class="card-weather-header">Current Conditions</div>
-                <div class="card-weather-content">
+                <div class="card-weather-header header-top">Current Conditions</div>
+                <div class="card-weather-current">
                     <div class="card-weather-current-tempIcon">
-                        <canvas class="card-weather-icons" id="currentIcon" width="75" height="75"></canvas>
-                        <div class="card-weather-current-temp"></div>        
+                        <canvas class="card-weather-icons" id="currentIcon" width="100" height="100"></canvas>
                     </div>
+                    <div class="card-weather-current-temp">
+                        <span card-weather-current-temp>82</span> ˚F
+                    </div>        
                     <div class="card-weather-current-highLow">
-                        <div class="card-weather-current-high">
+                        <div class="card-weather-current-high" style="padding-bottom: 5px;">
                             <span>High</span>
-                            <span>85 F</span>
+                            <span card-weather-current-high style="font-size: 1.75rem;">85</span> ˚F
                         </div>
-                        <div class="card-weather-current-low">
+                        <div class="card-weather-current-low" style="padding-top: 5px;">
                             <span>Low</span>
-                            <span>85 F</span>
+                            <span card-weather-current-low style="font-size: 1.75rem;">60</span> ˚F
                         </div>    
                     </div>
                     <div class="card-weather-current-wind">
-                        <div>Wind: </div>
-                        <div>3 MPH</div>
+                        <span>Wind: </span>
+                        <span card-weather-current-wind>3</span> MPH
                     </div>
                     <div class="card-weather-current-rain">
-                        <div>Rain: </div>
-                        <div>0%</div>
+                        <span>Rain: </span>
+                        <span card-weather-current-rain>0</span> %
                     </div>
                 </div>
             </div>
             <div class="card-weather-hourly">
                 <div class="card-weather-header">Hourly Forecast</div>
-                <div class="card-weather-content">
-                    <div class="card-weather-hourly-hour1">
-                        <div class="card-weather-hourly-hour1-time">1 PM</div>
-                        <div class="card-weather-hourly-hour1-temperature">82 F</div>
-                        <canvas class="card-weather-icons" id="card-weather-hourly-hour1-icon"></canvas>
+                <div class="card-weather-hourly-content">
+                    <div class="card-weather-hourly-hour">
+                        <div class="card-weather-hourly-hour-time">
+                            <span card-weather-hourly-hour1-time>1 PM</span>
+                        </div>
+                        <div class="card-weather-hourly-hour-tempIcon">
+                            <div class="card-weather-hourly-hour-temperature">
+                                <span card-weather-hourly-hour1-temperature>82 ˚F</span>
+                            </div>
+                            <canvas class="card-weather-icons" id="card-weather-hourly-hour1-icon" width="50" height="50"></canvas>
+                        </div>
                     </div>
-                    <div class="card-weather-hourly-hour2">
-                        <div class="card-weather-hourly-hour2-time">2 PM</div>
-                        <div class="card-weather-hourly-hour2-temperature">82 F</div>
-                        <canvas class="card-weather-icons" id="card-weather-hourly-hour2-icon"></canvas>
+                    <div class="card-weather-hourly-hour">
+                        <div class="card-weather-hourly-hour-time">
+                            <span card-weather-hourly-hour2-time>2 PM</span>
+                        </div>
+                        <div class="card-weather-hourly-hour-tempIcon">
+                            <div class="card-weather-hourly-hour-temperature">
+                                <span card-weather-hourly-hour2-temperature>82 ˚F</span>
+                            </div>
+                            <canvas class="card-weather-icons" id="card-weather-hourly-hour2-icon" width="50" height="50"></canvas>
+                        </div>
                     </div>
-                    <div class="card-weather-hourly-hour3">
-                        <div class="card-weather-hourly-hour3-time">3 PM</div>
-                        <div class="card-weather-hourly-hour3-temperature">82 F</div>
-                        <canvas class="card-weather-icons" id="card-weather-hourly-hour3-icon"></canvas>
+                    <div class="card-weather-hourly-hour">
+                        <div class="card-weather-hourly-hour-time">
+                            <span card-weather-hourly-hour3-time>3 PM</span>
+                        </div>
+                        <div class="card-weather-hourly-hour-tempIcon">
+                            <div class="card-weather-hourly-hour-temperature">
+                                <span card-weather-hourly-hour3-temperature>82 ˚F</span>
+                            </div>
+                            <canvas class="card-weather-icons" id="card-weather-hourly-hour3-icon" width="50" height="50"></canvas>
+                        </div>
                     </div>
-                    <div class="card-weather-hourly-hour4">
-                        <div class="card-weather-hourly-hour4-time">4 PM</div>
-                        <div class="card-weather-hourly-hour4-temperature">82 F</div>
-                        <canvas class="card-weather-icons" id="card-weather-hourly-hour4-icon"></canvas>
+                    <div class="card-weather-hourly-hour">
+                        <div class="card-weather-hourly-hour-time">
+                            <span card-weather-hourly-hour4-time>4 PM</span>
+                        </div>
+                        <div class="card-weather-hourly-hour-tempIcon">
+                            <div class="card-weather-hourly-hour-temperature">
+                                <span card-weather-hourly-hour4-temperature>82 ˚F</span>
+                            </div>
+                            <canvas class="card-weather-icons" id="card-weather-hourly-hour4-icon" width="50" height="50"></canvas>
+                        </div>
                     </div>
-                    <div class="card-weather-hourly-hour5">
-                        <div class="card-weather-hourly-hour5-time">5 PM</div>
-                        <div class="card-weather-hourly-hour5-temperature">82 F</div>
-                        <canvas class="card-weather-icons" id="card-weather-hourly-hour5-icon"></canvas>
+                    <div class="card-weather-hourly-hour">
+                        <div class="card-weather-hourly-hour-time">
+                            <span card-weather-hourly-hour5-time>5 PM</span>
+                        </div>
+                        <div class="card-weather-hourly-hour-tempIcon">
+                            <div class="card-weather-hourly-hour5-temperature">
+                                <span card-weather-hourly-hour5-temperature>82 ˚F</span>
+                            </div>
+                            <canvas class="card-weather-icons" id="card-weather-hourly-hour5-icon" width="50" height="50"></canvas>
+                        </div>
                     </div>
                 </div>        
             </div>
             <div class="card-weather-weekly">
                 <div class="card-weather-header">Weekly Forecast</div>
-                <div class="card-weather-content">
+                <div class="card-weather-weekly-content">
                     <div class="card-weather-weekly-day">
                         <div class="card-weather-weekly-day1-high">HI</div>
                         <div class="card-weather-weekly-day1-low">LOW</div>
-                        <canvas class="card-weather-icons" id="card-weather-weekly-day1-icon"></canvas>
+                        <canvas class="card-weather-icons" id="card-weather-weekly-day1-icon" width="50" height="50"></canvas>
                     </div>
                     <div class="card-weather-weekly-day">
                         <div class="card-weather-weekly-day2-high">HI</div>
                         <div class="card-weather-weekly-day2-low">LOW</div>
-                        <canvas class="card-weather-icons" id="card-weather-weekly-day2-icon"></canvas>
+                        <canvas class="card-weather-icons" id="card-weather-weekly-day2-icon" width="50" height="50"></canvas>
                     </div>
                     <div class="card-weather-weekly-day">
                         <div class="card-weather-weekly-day3-high">HI</div>
                         <div class="card-weather-weekly-day3-low">LOW</div>
-                        <canvas class="card-weather-icons" id="card-weather-weekly-day3-icon"></canvas>
+                        <canvas class="card-weather-icons" id="card-weather-weekly-day3-icon" width="50" height="50"></canvas>
                     </div>
                     <div class="card-weather-weekly-day">
                         <div class="card-weather-weekly-day4-high">HI</div>
                         <div class="card-weather-weekly-day4-low">LOW</div>
-                        <canvas class="card-weather-icons" id="card-weather-weekly-day4-icon"></canvas>
+                        <canvas class="card-weather-icons" id="card-weather-weekly-day4-icon" width="50" height="50"></canvas>
                     </div>
                     <div class="card-weather-weekly-day">
                         <div class="card-weather-weekly-day5-high">HI</div>
                         <div class="card-weather-weekly-day5-low">LOW</div>
-                        <canvas class="card-weather-icons" id="card-weather-weekly-day5-icon"></canvas>
+                        <canvas class="card-weather-icons" id="card-weather-weekly-day5-icon" width="50" height="50"></canvas>
                     </div>
                 </div>        
             </div>
@@ -116,9 +148,15 @@
         <div class="card-news">
             <div class="card-news-header">Trending News</div>
             <div class="card-news-newsBox">
-                <div class="card-news-newsBox-headline">Headline 1</div>
-                <div class="card-news-newsBox-headline">Headline 2</div>
-                <div class="card-news-newsBox-headline">Headline 3</div>
+                <div class="card-news-newsBox-headline">
+                    <span>Headline 1</span>
+                </div>
+                <div class="card-news-newsBox-headline">
+                    <span>Headline 2</span>
+                </div>
+                <div class="card-news-newsBox-headline">
+                    <span>Headline 3</span>
+                </div>
             </div>
         </div>
     </div>

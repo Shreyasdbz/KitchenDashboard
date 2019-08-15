@@ -23,9 +23,31 @@ searchBox.addListener('places_changed', () => {
     })
 })
 
+//--------------------------------------- HTML Variables ---------------------------------------
+//----------------- Icons
 const icon = new Skycons({color: '#222'})
 icon.set('currentIcon', 'clear-day')
+icon.set('card-weather-hourly-hour1-icon', 'clear-day')
+icon.set('card-weather-hourly-hour2-icon', 'clear-day')
+icon.set('card-weather-hourly-hour3-icon', 'clear-day')
+icon.set('card-weather-hourly-hour4-icon', 'clear-day')
+icon.set('card-weather-hourly-hour5-icon', 'clear-day')
+icon.set('card-weather-weekly-day1-icon', 'clear-day')
+icon.set('card-weather-weekly-day2-icon', 'clear-day')
+icon.set('card-weather-weekly-day3-icon', 'clear-day')
+icon.set('card-weather-weekly-day4-icon', 'clear-day')
+icon.set('card-weather-weekly-day5-icon', 'clear-day')
 icon.play()
+//----------------- Current Conditions
+card_weather_current_temp = document.querySelector('[card-weather-current-temp]')
+card_weather_current_high = document.querySelector('[card-weather-current-temp]')
+card_weather_current_low = document.querySelector('[card-weather-current-temp]')
+card_weather_current_wind = document.querySelector('[card-weather-current-temp]')
+card_weather_current_rain = document.querySelector('[card-weather-current-temp]')
+//----------------- Hourly Forecast
+card_weather_current_high = document.querySelector('[card-weather-current-high]')
+card_weather_current_low = document.querySelector('[card-weather-current-low]')
+
 
 function setWeatherData(data, place){
     
