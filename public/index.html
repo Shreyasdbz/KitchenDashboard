@@ -11,8 +11,9 @@
     <script defer src="./script.js"></script>
     <title>Kitchen Dashboard</title>
 </head>
-<body class="body day">
+<body class="body">
     <div class="container">
+        <!-- Time and Date Card -->
         <div class="card-timeDate">
             <div class="card-timeDate-time">
                 <span card-timeDate-time>12:00</span>
@@ -27,7 +28,9 @@
                 <input type="text" class="card-timeDate-enterLocationBox-textArea" data-city-search placeholder="To start the program, enter location">
             </div>
         </div>
+        <!-- Weather Card -->
         <div class="card-weather">
+            <!-- Current Conditions Section -->
             <div class="card-weather-row1">
                 <div class="card-weather-header header-top">Current Conditions</div>
                 <div class="card-weather-grouping">
@@ -38,16 +41,14 @@
                         <div class="card-weather-current-temp">
                             <span card-weather-current-temp>90</span> ˚F
                         </div>        
-                        <!-- <div class="card-weather-current-highLow"> -->
-                            <div class="card-weather-current-high" style="padding-top: 5px;">
-                                <span>High</span>
-                                <span card-weather-current-high style="font-size: 2rem;">100</span> ˚F
-                            </div>
-                            <div class="card-weather-current-low">
-                                <span>Low</span>
-                                <span card-weather-current-low style="font-size: 2rem;">50</span> ˚F
-                            </div>    
-                        <!-- </div> -->
+                        <div class="card-weather-current-high" style="padding-top: 5px;">
+                            <span>High</span>
+                            <span card-weather-current-high style="font-size: 2rem;">100</span> ˚F
+                        </div>
+                        <div class="card-weather-current-low">
+                            <span>Low</span>
+                            <span card-weather-current-low style="font-size: 2rem;">50</span> ˚F
+                        </div>    
                         <div class="card-weather-current-wind">
                             <span>Wind: </span>
                             <span  card-weather-current-wind style="font-size: 2rem;">10</span> MPH
@@ -62,6 +63,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Hourly Forecast Section -->
             <div class="card-weather-hourly">
                 <div class="card-weather-header">Hourly Forecast</div>
                 <div class="card-weather-hourly-grouping">
@@ -149,6 +151,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Weekly Forecast Section -->
             <div class="card-weather-weekly">
                 <div class="card-weather-header">Weekly Forecast</div>
                 <div class="card-weather-weekly-grouping">
@@ -210,6 +213,7 @@
                 </div>
             </div>
         </div>
+        <!-- News Card -->
         <div class="card-news">
             <div class="card-news-header">Trending News</div>
             <div class="card-news-newsBox">

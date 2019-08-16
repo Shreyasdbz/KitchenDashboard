@@ -335,5 +335,4 @@ function setNewsHeadlines(data){
 //----------------- Refreshes needed functions //-----------------
 setInterval(function(){ setBackground(); }, 1000);
 setInterval(function(){ setTime(); }, 1000);
-// setInterval(function(){ getWeather(); }, 10000);
 

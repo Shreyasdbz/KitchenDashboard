@@ -2,7 +2,7 @@
   "name": "kitchendashboard",
   "version": "1.0.0",
   "description": "Javascript based dashboard to display basic weather information.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "devStart": "nodemon server.js"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Shreyasdbz/KitchenDashboard.git"
   },
-  "author": "",
+  "author": "Shreyas Sane",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Shreyasdbz/KitchenDashboard/issues"
