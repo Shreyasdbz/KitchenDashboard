@@ -24,3 +24,6 @@ Needs Node.js and NPM installed
 
 ### NOTE:
 The CSS styling is designed primariy to be used on a 21" or bigger 1920 X 1080 monitor. I made this to be run on a raspberry pi. 
+
+## What it looks like:
+<img src="./Example.png">
