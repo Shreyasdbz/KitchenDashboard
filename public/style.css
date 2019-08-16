@@ -1,6 +1,5 @@
 *, *::before, *::after{
     box-sizing: border-box;
-    font-family: 'Comfortaa';
 }
 
 body{
@@ -9,6 +8,7 @@ body{
     align-items: center;
     margin: 0;
     padding: 0;
+    font-family: 'Comfortaa';
 }
 
 .day{
@@ -34,12 +34,12 @@ body{
     max-width: 100%;
     width: 1500px;
     box-shadow: 0 2px 10px black;
-    margin-top: 15px;
+    margin-top: 25px;
     height: 12vh;
 }
 
 .card-timeDate-time{
-    font-size: 5rem;
+    font-size: 6rem;
     padding-left: 10px;
 }
 
@@ -153,13 +153,30 @@ body{
     font-size: 1.25rem;
 }
 
+
 .card-weather-summary{
     display: flex;
     align-items: center;
     justify-content: center;
     padding-bottom: 10px;
     font-size: 1.25rem;
-    color: #444;
+    color: #222;
+}
+.card-weather-summary-day{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    font-size: 1.25rem;
+    color: rgb(255, 97, 35);
+}
+.card-weather-summary-night{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    font-size: 1.25rem;
+    color: rgb(2, 71, 128);
 }
 
 .card-weather-hourly{
@@ -202,7 +219,7 @@ body{
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-    padding-left: 45px;
+    padding-left: 85px;
     height: 12vh;
 }
 
@@ -217,7 +234,7 @@ body{
 }
 
 .card-weather-weekly-day-highLowTemps{
-    font-size: 1.5rem;
+    font-size: 1.75rem;
 }
 
 
@@ -232,7 +249,8 @@ body{
     max-width: 100%;
     width: 1500px;
     box-shadow: 0 2px 10px black;
-    margin-top: 20px;
+    margin-top: 25px;
+    height: 23.5vh;
 }
 
 .card-news-header{
@@ -260,4 +278,6 @@ body{
     margin-bottom: 0.5%;
     border-radius: 2px;
     box-shadow: 1px 1px 5px black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
 }

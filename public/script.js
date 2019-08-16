@@ -77,6 +77,11 @@ card_weather_weekly_day5_low = document.querySelector('[card-weather-weekly-day5
 //Summary
 card_weather_weekly_summary = document.querySelector('[card-weather-weekly-summary]')
 
+//----------------- News Headlines
+card_news_newsBox_headline1 = document.querySelector('[card-news-newsBox-headline1]')
+card_news_newsBox_headline2 = document.querySelector('[card-news-newsBox-headline2]')
+card_news_newsBox_headline3 = document.querySelector('[card-news-newsBox-headline3]')
+
 
 //************************************************************************************************/
 //--------------------------------------- Functions ---------------------------------------
@@ -100,7 +105,12 @@ function setTime(){
         card_timeDate_AMPM.textContent = "PM"
     }
     else{
-        card_timeDate_AMPM.textContent = "AM"
+        if(today.getHours() == 12){
+            card_timeDate_AMPM.textContent = "PM"
+        }
+        else{
+            card_timeDate_AMPM.textContent = "AM"
+        }
     }
 
     var dateStr = "";
@@ -131,28 +141,55 @@ function setBackground(){
 //----------------- Looks for a place being typed in and activates the weather //-----------------
 const searchElement = document.querySelector('[data-city-search]')
 const searchBox = new google.maps.places.SearchBox(searchElement)
+
 searchBox.addListener('places_changed', () => {
     const place = searchBox.getPlaces()[0]
     if (place == null) return
     const latitude = place.geometry.location.lat()
     const longitude = place.geometry.location.lng()
-    fetch('/weather', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'appplication/json'
-        },
-        body: JSON.stringify({
-            latitude: latitude,
-            longitude: longitude
-        })
-    }).then(res => res.json()).then(data => {
-        console.log(place)
-        console.log(place.formatted_address)
-        console.log(data)
-        setWeatherData(data, place.formatted_address)
-    })
+    
+    // getWeather(place, latitude, longitude);
+    // getNews();
+
+    setInterval(function(){
+        fetch('/weather', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'appplication/json'
+            },
+            body: JSON.stringify({
+                latitude: latitude,
+                longitude: longitude
+            })
+        }).then(res => res.json()).then(data => {
+            console.log(place)
+            console.log(place.formatted_address)
+            console.log(data)
+            setWeatherData(data, place.formatted_address)
+        })            
+    }, 300000);
+
 })
+
+// function getWeather(place, latitude, longitude){
+//     fetch('/weather', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Accept': 'appplication/json'
+//         },
+//         body: JSON.stringify({
+//             latitude: latitude,
+//             longitude: longitude
+//         })
+//     }).then(res => res.json()).then(data => {
+//         console.log(place)
+//         console.log(place.formatted_address)
+//         console.log(data)
+//         setWeatherData(data, place.formatted_address)
+//     })
+// }
 
 //----------------- Function to set all the weather data //-----------------
 function setWeatherData(data, place){
@@ -199,25 +236,30 @@ function setWeatherData(data, place){
     card_weather_hourly_summary.textContent = data.hourly.summary
 
     //-------Weekly Forecast//-------
-    //Times
+    //Days
+    card_weather_weekly_day_dayName1.textContent = days[0];
+    card_weather_weekly_day_dayName2.textContent = days[1];
+    card_weather_weekly_day_dayName3.textContent = days[2];
+    card_weather_weekly_day_dayName4.textContent = days[3];
+    card_weather_weekly_day_dayName5.textContent = days[4];
     //Highs
-    card_weather_weekly_day1_high.textContent = data.daily.data[0].apparentTemperatureHigh.toFixed(0);
-    card_weather_weekly_day2_high.textContent = data.daily.data[1].apparentTemperatureHigh.toFixed(0);
-    card_weather_weekly_day3_high.textContent = data.daily.data[2].apparentTemperatureHigh.toFixed(0);
-    card_weather_weekly_day4_high.textContent = data.daily.data[3].apparentTemperatureHigh.toFixed(0);
-    card_weather_weekly_day5_high.textContent = data.daily.data[4].apparentTemperatureHigh.toFixed(0);
+    card_weather_weekly_day1_high.textContent = data.daily.data[1].temperatureHigh.toFixed(0);
+    card_weather_weekly_day2_high.textContent = data.daily.data[2].temperatureHigh.toFixed(0);
+    card_weather_weekly_day3_high.textContent = data.daily.data[3].temperatureHigh.toFixed(0);
+    card_weather_weekly_day4_high.textContent = data.daily.data[4].temperatureHigh.toFixed(0);
+    card_weather_weekly_day5_high.textContent = data.daily.data[5].temperatureHigh.toFixed(0);
     //Lows
-    card_weather_weekly_day1_low.textContent = data.daily.data[0].apparentTemperatureLow.toFixed(0);
-    card_weather_weekly_day2_low.textContent = data.daily.data[1].apparentTemperatureLow.toFixed(0);
-    card_weather_weekly_day3_low.textContent = data.daily.data[2].apparentTemperatureLow.toFixed(0);
-    card_weather_weekly_day4_low.textContent = data.daily.data[3].apparentTemperatureLow.toFixed(0);
-    card_weather_weekly_day5_low.textContent = data.daily.data[4].apparentTemperatureLow.toFixed(0);
+    card_weather_weekly_day1_low.textContent = data.daily.data[1].temperatureLow.toFixed(0);
+    card_weather_weekly_day2_low.textContent = data.daily.data[2].temperatureLow.toFixed(0);
+    card_weather_weekly_day3_low.textContent = data.daily.data[3].temperatureLow.toFixed(0);
+    card_weather_weekly_day4_low.textContent = data.daily.data[4].temperatureLow.toFixed(0);
+    card_weather_weekly_day5_low.textContent = data.daily.data[5].temperatureLow.toFixed(0);
     //Icons
-    icon.set('card-weather-weekly-day1-icon', data.hourly.data[0].icon)
-    icon.set('card-weather-weekly-day2-icon', data.hourly.data[1].icon)
-    icon.set('card-weather-weekly-day3-icon', data.hourly.data[2].icon)
-    icon.set('card-weather-weekly-day4-icon', data.hourly.data[3].icon)
-    icon.set('card-weather-weekly-day5-icon', data.hourly.data[4].icon)
+    icon.set('card-weather-weekly-day1-icon', data.hourly.data[1].icon)
+    icon.set('card-weather-weekly-day2-icon', data.hourly.data[2].icon)
+    icon.set('card-weather-weekly-day3-icon', data.hourly.data[3].icon)
+    icon.set('card-weather-weekly-day4-icon', data.hourly.data[4].icon)
+    icon.set('card-weather-weekly-day5-icon', data.hourly.data[5].icon)
 
     //Sumary
     card_weather_weekly_summary.textContent = data.daily.summary    
@@ -227,28 +269,43 @@ function setWeatherData(data, place){
 //----------------- Calculates an hours array to display for hourly forecast //-----------------
 function getForecastHours(currentHour){
     hours = []
-    lateHours = [1,2,3,4,5,6,7,8,9,10,11,0]
+    numHours = ["12 AM", "1 AM", "2 AM", "3 AM", "4 AM", "5 AM", "6 AM", "7 AM", "8 AM", "9 AM", "10 AM", "11 AM",
+                "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM", "9 PM", "10 PM", "11 PM"]
 
-    for(var i = 1; i < 8; i++){
-        if(currentHour > 12){
-            hours[i] = lateHours[(currentHour-12)] + i + " PM";
-        }
-        else{
-            hours[i] = currentHour + i + " AM";
-        }        
+    for(var i = 0; i < 6; i++){
+        hours[i] = numHours[currentHour + i + 1]
     }
     return hours;
 }
 
 //----------------- Calculates a days array to display for weekly forecast //-----------------
 function getForecastDays(currentDay){
-    daysList = ["Mon", "Tues", "Wed", "Thr", "Fri", "Sat", "Sun"]
+    daysList = ["Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun"];
     days = [];
+
+    for(var i = 0; i < 5; i++){
+        days[i] = daysList[currentDay + i]
+    }
 
     return days;
 }
+
+// function getNews(){
+//     fetch('/weather', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Accept': 'appplication/json'
+//         }
+//     }).then(res => res.json()).then(data => {
+//         console.log(data)
+//         getNews()
+//     })
+// }
 
 
 //----------------- Refreshes needed functions //-----------------
 setInterval(function(){ setBackground(); }, 1000);
 setInterval(function(){ setTime(); }, 1000);
+// setInterval(function(){ getWeather(); }, 10000);
+
