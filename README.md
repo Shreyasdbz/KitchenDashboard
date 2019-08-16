@@ -21,3 +21,6 @@ Needs Node.js and NPM installed
 
 >#### 5)
 >>On your browser, go to **localhost:3001** or **[yourIPaddress]:3001** and enter the location in the search box.
+
+### NOTE:
+The CSS styling is designed primariy to be used on a 21" or bigger 1920 X 1080 monitor. 
