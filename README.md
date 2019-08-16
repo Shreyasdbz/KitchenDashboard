@@ -11,7 +11,7 @@ Needs Node.js and NPM installed
 >>Navigate to the KitchenDashboard directory then run **npm install package**.
 
 >#### 2) 
->>Create a **.env** file with two variables: **DARKSKY_API_KEY=** and **NEWSAPI_API_KEY=** .Register with those services and put your keys in those locations.
+>>Create a **.env** file with two variables: **DARKSKY_API_KEY=** and **NEWSAPI_API_KEY=** Register with https://darksky.net/dev and https://newsapi.org for dev accounts and put your keys in those locations.
 
 >#### 3) 
 >>Create and new project on google console and enable maps and places APIs. Now copy that API key and place it in the proper script tag in index.html.
