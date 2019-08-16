@@ -20,14 +20,14 @@ app.post('/weather', (req, res) => {
     console.log(req.body)
 })
 
-// app.post('/news', (req, res) => {
-//     const urlNews = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${NEWS_API_KEY}`
-//     axios({
-//         url: urlNews,
-//         responseType: 'json'
-//     }).then(newsData => res.json(newsData.data))
-//     console.log(req.body)
-// })
+app.post('/news', (req, res) => {
+    const urlNews = `https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=${NEWS_API_KEY}`
+    axios({
+        url: urlNews,
+        responseType: 'json'
+    }).then(newsData => res.json(newsData.data))
+    console.log(req.body)
+})
 
 app.listen(3001, () => {
     console.log('Server started')

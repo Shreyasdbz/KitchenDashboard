@@ -78,9 +78,18 @@ card_weather_weekly_day5_low = document.querySelector('[card-weather-weekly-day5
 card_weather_weekly_summary = document.querySelector('[card-weather-weekly-summary]')
 
 //----------------- News Headlines
+//Headlines
 card_news_newsBox_headline1 = document.querySelector('[card-news-newsBox-headline1]')
 card_news_newsBox_headline2 = document.querySelector('[card-news-newsBox-headline2]')
 card_news_newsBox_headline3 = document.querySelector('[card-news-newsBox-headline3]')
+//Descriptions
+card_news_newsBox_description1 = document.querySelector('[card-news-newsBox-description1]')
+card_news_newsBox_description2 = document.querySelector('[card-news-newsBox-description2]')
+card_news_newsBox_description3 = document.querySelector('[card-news-newsBox-description3]')
+//Sources
+card_news_newsBox_source1 = document.querySelector('[card-news-newsBox-source1]')
+card_news_newsBox_source2 = document.querySelector('[card-news-newsBox-source2]')
+card_news_newsBox_source3 = document.querySelector('[card-news-newsBox-source3]')
 
 
 //************************************************************************************************/
@@ -148,9 +157,23 @@ searchBox.addListener('places_changed', () => {
     const latitude = place.geometry.location.lat()
     const longitude = place.geometry.location.lng()
     
-    // getWeather(place, latitude, longitude);
-    // getNews();
-
+    //Get Weather forecast ---------------------------------
+    fetch('/weather', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'appplication/json'
+        },
+        body: JSON.stringify({
+            latitude: latitude,
+            longitude: longitude
+        })
+    }).then(res => res.json()).then(data => {
+        console.log(place)
+        console.log(place.formatted_address)
+        console.log(data)
+        setWeatherData(data, place.formatted_address)
+    })            
     setInterval(function(){
         fetch('/weather', {
             method: 'POST',
@@ -170,26 +193,30 @@ searchBox.addListener('places_changed', () => {
         })            
     }, 300000);
 
+    //Get news headlines ---------------------------------
+    fetch('/news', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'appplication/json'
+        }
+    }).then(res => res.json()).then(data => {
+        console.log(data)
+        setNewsHeadlines(data)
+    })
+    setInterval(function(){
+        fetch('/news', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'appplication/json'
+            }
+        }).then(res => res.json()).then(data => {
+            console.log(data)
+            setNewsHeadlines(data)
+        })            
+    }, 300000);
 })
-
-// function getWeather(place, latitude, longitude){
-//     fetch('/weather', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Accept': 'appplication/json'
-//         },
-//         body: JSON.stringify({
-//             latitude: latitude,
-//             longitude: longitude
-//         })
-//     }).then(res => res.json()).then(data => {
-//         console.log(place)
-//         console.log(place.formatted_address)
-//         console.log(data)
-//         setWeatherData(data, place.formatted_address)
-//     })
-// }
 
 //----------------- Function to set all the weather data //-----------------
 function setWeatherData(data, place){
@@ -290,19 +317,20 @@ function getForecastDays(currentDay){
     return days;
 }
 
-// function getNews(){
-//     fetch('/weather', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Accept': 'appplication/json'
-//         }
-//     }).then(res => res.json()).then(data => {
-//         console.log(data)
-//         getNews()
-//     })
-// }
-
+function setNewsHeadlines(data){
+    //Headlines
+    card_news_newsBox_headline1.textContent = data.articles[0].title;
+    card_news_newsBox_headline2.textContent = data.articles[1].title;
+    card_news_newsBox_headline3.textContent = data.articles[2].title;
+    //Short descriptions
+    card_news_newsBox_description1.textContent = data.articles[0].description.substring(0, 250) + " ... ";
+    card_news_newsBox_description2.textContent = data.articles[1].description.substring(0, 250) + " ... ";
+    card_news_newsBox_description3.textContent = data.articles[2].description.substring(0, 250) + " ... ";
+    //Source
+    card_news_newsBox_source1.textContent = "| " + data.articles[0].source.name;
+    card_news_newsBox_source2.textContent = "| " + data.articles[1].source.name;
+    card_news_newsBox_source3.textContent = "| " + data.articles[2].source.name;
+}
 
 //----------------- Refreshes needed functions //-----------------
 setInterval(function(){ setBackground(); }, 1000);
