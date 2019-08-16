@@ -11,14 +11,17 @@
     <script defer src="./script.js"></script>
     <title>Kitchen Dashboard</title>
 </head>
-<body>
+<body class="body day">
     <div class="container">
         <div class="card-timeDate">
             <div class="card-timeDate-time">
-                <span>12:15 PM</span>
+                <span card-timeDate-time>8:52</span>
+                <span class="card-timeDate-AMPM" card-timeDate-AMPM>PM</span>
             </div>
             <div class="card-timeDate-date">
-                <span>August 13, 2019</span>
+                <span card-timeDate-date-day>Tuesday</span>
+                <span card-timeDate-date-date style="font-size: 2.5rem;">13</span>
+                <span card-timeDate-date-monthYear>August 2018</span>
             </div>
             <div class="card-timeDate-enterLocationBox">
                 <input type="text" class="card-timeDate-enterLocationBox-textArea" data-city-search placeholder="Enter Location">
@@ -29,28 +32,28 @@
                 <div class="card-weather-header header-top">Current Conditions</div>
                 <div class="card-weather-current">
                     <div class="card-weather-current-tempIcon">
-                        <canvas class="card-weather-icons" id="currentIcon" width="100" height="100"></canvas>
+                        <canvas class="card-weather-icons" id="currentIcon" width="75" height="75"></canvas>
                     </div>
                     <div class="card-weather-current-temp">
                         <span card-weather-current-temp>82</span> ˚F
                     </div>        
-                    <div class="card-weather-current-highLow">
-                        <div class="card-weather-current-high" style="padding-bottom: 5px;">
+                    <!-- <div class="card-weather-current-highLow"> -->
+                        <div class="card-weather-current-high">
                             <span>High</span>
-                            <span card-weather-current-high style="font-size: 1.75rem;">85</span> ˚F
+                            <span card-weather-current-high style="font-size: 2rem;">85</span> ˚F
                         </div>
-                        <div class="card-weather-current-low" style="padding-top: 5px;">
+                        <div class="card-weather-current-low">
                             <span>Low</span>
-                            <span card-weather-current-low style="font-size: 1.75rem;">60</span> ˚F
+                            <span card-weather-current-low style="font-size: 2rem;">60</span> ˚F
                         </div>    
-                    </div>
+                    <!-- </div> -->
                     <div class="card-weather-current-wind">
                         <span>Wind: </span>
-                        <span card-weather-current-wind>3</span> MPH
+                        <span  card-weather-current-wind style="font-size: 2rem;">3</span> MPH
                     </div>
                     <div class="card-weather-current-rain">
                         <span>Rain: </span>
-                        <span card-weather-current-rain>0</span> %
+                        <span card-weather-current-rain style="font-size: 2rem;">0</span> %
                     </div>
                 </div>
             </div>
@@ -65,7 +68,7 @@
                             <div class="card-weather-hourly-hour-temperature">
                                 <span card-weather-hourly-hour1-temperature>82 ˚F</span>
                             </div>
-                            <canvas class="card-weather-icons" id="card-weather-hourly-hour1-icon" width="50" height="50"></canvas>
+                            <canvas class="card-weather-icons" id="card-weather-hourly-hour1-icon" width="50" height="50" style="padding-left: 5px;"></canvas>
                         </div>
                     </div>
                     <div class="card-weather-hourly-hour">
@@ -76,7 +79,7 @@
                             <div class="card-weather-hourly-hour-temperature">
                                 <span card-weather-hourly-hour2-temperature>82 ˚F</span>
                             </div>
-                            <canvas class="card-weather-icons" id="card-weather-hourly-hour2-icon" width="50" height="50"></canvas>
+                            <canvas class="card-weather-icons" id="card-weather-hourly-hour2-icon" width="50" height="50" style="padding-left: 5px;"></canvas>
                         </div>
                     </div>
                     <div class="card-weather-hourly-hour">
@@ -87,7 +90,7 @@
                             <div class="card-weather-hourly-hour-temperature">
                                 <span card-weather-hourly-hour3-temperature>82 ˚F</span>
                             </div>
-                            <canvas class="card-weather-icons" id="card-weather-hourly-hour3-icon" width="50" height="50"></canvas>
+                            <canvas class="card-weather-icons" id="card-weather-hourly-hour3-icon" width="50" height="50" style="padding-left: 5px;"></canvas>
                         </div>
                     </div>
                     <div class="card-weather-hourly-hour">
@@ -98,7 +101,7 @@
                             <div class="card-weather-hourly-hour-temperature">
                                 <span card-weather-hourly-hour4-temperature>82 ˚F</span>
                             </div>
-                            <canvas class="card-weather-icons" id="card-weather-hourly-hour4-icon" width="50" height="50"></canvas>
+                            <canvas class="card-weather-icons" id="card-weather-hourly-hour4-icon" width="50" height="50" style="padding-left: 5px;"></canvas>
                         </div>
                     </div>
                     <div class="card-weather-hourly-hour">
@@ -109,7 +112,7 @@
                             <div class="card-weather-hourly-hour5-temperature">
                                 <span card-weather-hourly-hour5-temperature>82 ˚F</span>
                             </div>
-                            <canvas class="card-weather-icons" id="card-weather-hourly-hour5-icon" width="50" height="50"></canvas>
+                            <canvas class="card-weather-icons" id="card-weather-hourly-hour5-icon" width="50" height="50" style="padding-left: 5px;"></canvas>
                         </div>
                     </div>
                 </div>        

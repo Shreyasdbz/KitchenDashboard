@@ -4,13 +4,19 @@
 }
 
 body{
-    background: linear-gradient(to right, rgb(255, 167, 35), rgb(255, 97, 35));
-    /* background: linear-gradient(to right, rgb(1, 143, 136), rgb(2, 71, 128)); */
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     padding: 0;
+}
+
+.day{
+    background: linear-gradient(to right, rgb(255, 167, 35), rgb(255, 97, 35));
+}
+
+.night{
+    background: linear-gradient(to right, rgb(1, 143, 136), rgb(2, 71, 128));
 }
 
 /* .container{
@@ -35,20 +41,25 @@ body{
 
 .card-timeDate-time{
     font-size: 5rem;
-    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.card-timeDate-AMPM{
+    font-size: 1.75rem;
+    padding-right: 50px;
 }
 
 .card-timeDate-date{
     font-size: 2rem;
     border-right: 3px solid #777;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
     border-right: 3px solid #777;
     border-left: 3px solid #777;
 }
 
 .card-timeDate-enterLocationBox{
-    padding-left: 10px;
+    padding-left: 40px;
     display: flex;
     justify-content: center;
     font-family: sans-serif;
@@ -62,6 +73,20 @@ body{
     width: 300px;
     height: 30px;
     font-family: sans-serif;
+}
+
+.pac-item{
+    font-size: 1rem;
+    padding: 10px 10px;
+}
+
+.pac-icon{
+    display: none;
+}
+
+.pac-item-query{
+    font-size: 1rem;
+    padding-right: 10px;
 }
 
 /*------------------------------ Weather Info ----------------------*/
@@ -107,7 +132,7 @@ body{
     margin-top: 20px;
     margin-bottom: 20px;
     padding-left: 45px;
-    height: 12vh;
+    height: 10vh;
 }
 
 .card-weather-current-tempIcon{
@@ -115,7 +140,9 @@ body{
 }
 
 .card-weather-current-temp{
-    font-size: 3rem;
+    font-size: 2.5rem;
+    /* border-right: 3px solid #222;
+    margin-right: 30%; */
 }
 
 .card-weather-current-highLow{
@@ -140,13 +167,15 @@ body{
 }
 
 .card-weather-hourly-hour{
-    border-right: 1px #222;
-    border-left: 1px #222;
+    padding-right: 25px;
 }
 
 .card-weather-hourly-hour-tempIcon{
+    font-size: 1.75rem;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-weather-weekly-content{

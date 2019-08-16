@@ -1,0 +1,3 @@
+script.js:19 Object
+script.js:20 Allentown, PA, USA
+script.js:21 Objectcurrently: {time: 1565910813, summary: "Partly Cloudy", icon: "partly-cloudy-day", nearestStormDistance: 16, nearestStormBearing: 318, …}daily: {summary: "Light rain throughout the week, with high temperatures peaking at 91°F on Sunday.", icon: "rain", data: Array(8)}flags: {sources: Array(11), nearest-station: 2.38, units: "us"}hourly: {summary: "Possible drizzle tonight.", icon: "rain", data: Array(49)}latitude: 40.6022939longitude: -75.4714098minutely: {summary: "Partly cloudy for the hour.", icon: "partly-cloudy-day", data: Array(61)}offset: -4timezone: "America/New_York"__proto__: Object
